@@ -1,5 +1,25 @@
 .game-selection {
-    display: flex;
     flex: 1 auto;
-    margin-top: 30px;
+    padding: 30px 50px;
+    justify-content: center;
+}
+
+.game-selection__container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.container__consoles {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.container__random {
+    margin-top: 50px;
+}
+
+.game-selection__container .console {
+    margin-left: 50px;
 }

@@ -1,0 +1,13 @@
+.result {
+    margin: 0 auto;
+    width: 50vw;
+    flex-direction: column;
+}
+
+.result__headline {
+    display: inline-flex;
+}
+
+.result__h1 {
+    margin-right: 20px;
+}

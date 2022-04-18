@@ -1,0 +1,25 @@
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 auto;
+}
+
+.score__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30vw;
+    border: 1px solid;
+    padding: 30px 20px;
+}
+
+.content__wrapper {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.content__column {
+    margin: 0 auto;
+}

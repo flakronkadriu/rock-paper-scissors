@@ -1,0 +1,4 @@
+export interface PointsProps {
+  title: string;
+  score: number;
+}

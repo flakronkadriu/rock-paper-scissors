@@ -4,7 +4,7 @@ import Main from "./components/Main/Main";
 import reportWebVitals from "./core/reportWebVitals";
 import "./core/polyfills";
 
-import "./styles/main.scss";
+import "./styles/global.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

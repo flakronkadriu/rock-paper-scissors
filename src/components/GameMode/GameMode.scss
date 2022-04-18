@@ -1,0 +1,30 @@
+.game-mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.game-mode__wrapper {
+    width: 30vw;
+    height: 30vh;
+    border: 1px solid;
+    padding: 30px 20px;
+    box-shadow: 1px 3px #ccc8c8;
+}
+
+.game-mode__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content__headline {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.content__btn_player {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}

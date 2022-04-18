@@ -1,0 +1,30 @@
+.btn {
+    padding: 5px 30px;
+    display: inline-flex;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 16px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.btn__mode--primary {
+    color: #ffff;
+    background-color: red;
+    background-image: linear-gradient(to bottom right, #f5dd42, #f58742);
+}
+
+.btn__size--small {
+    height: 35px;
+}
+
+.btn__size--medium {
+    height: 60px;
+}
+
+.btn__size--large {
+    height: 80px;
+}

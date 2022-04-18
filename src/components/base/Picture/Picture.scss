@@ -1,0 +1,15 @@
+.img {
+    border-style: none;
+}
+
+.img__fit--cover {
+    object-fit: cover;
+}
+
+.img__fit--contain {
+    object-fit: contain;
+}
+
+.img__fit--auto {
+    object-fit: auto;
+}

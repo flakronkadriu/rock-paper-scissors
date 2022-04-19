@@ -17,6 +17,11 @@
     background-image: linear-gradient(to bottom right, #f5dd42, #f58742);
 }
 
+.btn__mode--primary:hover {
+    background-color: #fcf5f7;
+    background-image: linear-gradient(to bottom right, #fcf5f7, #f58742);
+}
+
 .btn__mode--secondary {
     color: #000;
     background-color: white;

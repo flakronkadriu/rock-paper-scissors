@@ -1,15 +1,16 @@
 import React from "react";
+import { IGameContext } from "../../logic/Game/context";
 import { withGameContext } from "../../shared/utils/withContext";
 
 import "./GameOver.scss";
 
-const GameOver: React.FunctionComponent = () => (
+const GameOver: React.FunctionComponent<IGameContext> = (props) => (
   <div className="game_over">
     <div className="game_over__wrapper">
       <h1>
         Game over!
         <br />
-        You lost
+        You {props.wins === 10 ? "WIN" : "LOSE"}
       </h1>
     </div>
   </div>

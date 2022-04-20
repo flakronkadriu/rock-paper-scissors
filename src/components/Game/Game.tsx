@@ -10,8 +10,8 @@ import "./Game.scss";
 const GameComponent: React.FunctionComponent<IGame> = ({ isPlaying }) => (
   <div className="game__wrapper">
     <Score />
-    <GameSelection />
-    {isPlaying && <GameResults />}
+    {isPlaying && <GameSelection />}
+    {!isPlaying && <GameResults />}
   </div>
 );
 

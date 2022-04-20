@@ -16,8 +16,9 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   children,
   mode,
   size,
+  ...props
 }) => (
-  <button className={`btn btn__mode--${mode} btn__size--${size}`}>
+  <button {...props} className={`btn btn__mode--${mode} btn__size--${size}`}>
     {children}
   </button>
 );

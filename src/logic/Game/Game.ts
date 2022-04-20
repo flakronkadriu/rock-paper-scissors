@@ -1,29 +1,37 @@
-import { ConsoleType } from "../Console/model";
+import { ConsoleType, consoleTypes } from "../Console/model";
 import { ResultEnum } from "../Result/model";
+import { userLoses } from "./model";
+import { IGame } from "./model/game-interface";
 
 export class Game {
   wins: number;
   lose: number;
   isPlaying: boolean;
-  userLoses: Map<ConsoleType, ConsoleType>;
 
-  constructor() {
-    this.wins = 0;
-    this.lose = 0;
-    this.isPlaying = false;
-    this.userLoses = new Map();
-    this.userLoses.set(ConsoleType.Rock, ConsoleType.Paper);
-    this.userLoses.set(ConsoleType.Scissors, ConsoleType.Rock);
-    this.userLoses.set(ConsoleType.Paper, ConsoleType.Scissors);
+  constructor(raw: IGame) {
+    this.wins = raw.wins;
+    this.lose = raw.lose;
+    this.isPlaying = raw.isPlaying;
   }
 
-  static getRandomConsole() {
-    return ConsoleType[Math.floor(Math.random() * 3)];
+  static createDefault(): IGame {
+    return {
+      wins: 0,
+      lose: 0,
+      isPlaying: false,
+    };
   }
 
-  getGameResult(userInput: ConsoleType, computerInput: ConsoleType) {
+  static getRandomConsole(): ConsoleType {
+    return consoleTypes[Math.floor(Math.random() * 3)];
+  }
+
+  static getGameResult(
+    userInput: ConsoleType,
+    computerInput: ConsoleType
+  ): ResultEnum {
     if (userInput === computerInput) return ResultEnum.DRAW;
-    if (this.userLoses.get(userInput) === computerInput) return ResultEnum.LOST;
+    if (userLoses[userInput] === computerInput) return ResultEnum.LOST;
     return ResultEnum.WIN;
   }
 }

@@ -1,5 +1,5 @@
 export enum ConsoleType {
-  Rock = 0,
-  Scissors = 1,
-  Paper = 2,
+  Rock = "ROCK",
+  Scissors = "SCISSORS",
+  Paper = "PAPER",
 }

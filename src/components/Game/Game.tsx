@@ -1,16 +1,18 @@
 import React from "react";
+import { IGame } from "../../logic/Game/model";
+import { withGameContext } from "../../shared/utils/withContext";
 import GameResults from "../GameResults/GameResults";
 import GameSelection from "../GameSelection/GameSelection";
 import Score from "../Score/Score";
 
 import "./Game.scss";
 
-const Game: React.FunctionComponent = () => (
+const GameComponent: React.FunctionComponent<IGame> = ({ isPlaying }) => (
   <div className="game__wrapper">
     <Score />
-    {/* <GameSelection /> */}
-    <GameResults />
+    <GameSelection />
+    {isPlaying && <GameResults />}
   </div>
 );
 
-export default Game;
+export default withGameContext(GameComponent);

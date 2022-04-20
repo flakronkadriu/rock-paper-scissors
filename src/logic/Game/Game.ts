@@ -8,8 +8,8 @@ export class Game {
     return {
       wins: 0,
       lose: 0,
-      isPlaying: true,
-      gameStatus: GameStatus.INIT,
+      isPlaying: false,
+      gameStatus: GameStatus.Init,
       result: ResultEnum.DRAW,
       userInput: ConsoleType.Paper,
       computerInput: ConsoleType.Rock,
@@ -38,6 +38,14 @@ export class Game {
     return {
       ...state,
       isPlaying,
+    };
+  }
+
+  static setGameStatus(state: IGame, gameStatus: GameStatus): IGame {
+    return {
+      ...state,
+      gameStatus,
+      isPlaying: gameStatus === GameStatus.Started,
     };
   }
 

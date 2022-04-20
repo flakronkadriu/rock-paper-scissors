@@ -5,7 +5,7 @@ import GameComponent from "../Game/Game";
 import "./Main.scss";
 import { GameContext } from "../../logic/Game/context/game-context";
 import { Game } from "../../logic/Game/Game";
-import { IGame } from "../../logic/Game/model";
+import { GameStatus, IGame } from "../../logic/Game/model";
 import { IGameContext } from "../../logic/Game/context";
 
 const Main: React.FC = () => {
@@ -15,9 +15,9 @@ const Main: React.FC = () => {
 
   return (
     <div className="main">
-      {/* <GameMode /> */}
       <GameContext.Provider value={values}>
-        <GameComponent />
+        {values.gameStatus === GameStatus.Init && <GameMode />}
+        {values.gameStatus === GameStatus.Started && <GameComponent />}
       </GameContext.Provider>
     </div>
   );

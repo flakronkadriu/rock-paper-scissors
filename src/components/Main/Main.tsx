@@ -7,6 +7,7 @@ import { GameContext } from "../../logic/Game/context/game-context";
 import { Game } from "../../logic/Game/Game";
 import { GameStatus, IGame } from "../../logic/Game/model";
 import { IGameContext } from "../../logic/Game/context";
+import GameOver from "../GameOver/GameOver";
 
 const Main: React.FC = () => {
   const [gameState, setGameState] = React.useState<IGame>(Game.createDefault());
@@ -18,6 +19,7 @@ const Main: React.FC = () => {
       <GameContext.Provider value={values}>
         {values.gameStatus === GameStatus.Init && <GameMode />}
         {values.gameStatus === GameStatus.Started && <GameComponent />}
+        {values.gameStatus === GameStatus.End && <GameOver />}
       </GameContext.Provider>
     </div>
   );

@@ -24,6 +24,7 @@ export class Game {
     return {
       ...state,
       wins: state.wins + 1,
+      gameStatus: state.wins + 1 === 10 ? GameStatus.End : state.gameStatus,
     };
   }
 
@@ -31,6 +32,7 @@ export class Game {
     return {
       ...state,
       lose: state.lose + 1,
+      gameStatus: state.lose + 1 === 10 ? GameStatus.End : state.gameStatus,
     };
   }
 

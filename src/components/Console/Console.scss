@@ -15,7 +15,7 @@
     }
 }
 
-@media (min-resolution: 2dppx) {
+@media (max-resolution: 2dppx) {
     .console {
         padding: 40px;
     }

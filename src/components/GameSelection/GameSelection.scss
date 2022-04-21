@@ -39,3 +39,9 @@
         margin-left: 0;
     }
 }
+
+@media (max-resolution: 2dppx) {
+    .game-selection__container {
+        margin-bottom: 10px;
+    }
+}

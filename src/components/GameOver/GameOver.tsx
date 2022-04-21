@@ -10,7 +10,7 @@ const GameOver: React.FunctionComponent<IGameContext> = (props) => (
       <h1>
         Game over!
         <br />
-        You {props.wins === 10 ? "WIN" : "LOSE"}
+        You {props.wins === 10 ? "WON" : "LOST"}
       </h1>
     </div>
   </div>

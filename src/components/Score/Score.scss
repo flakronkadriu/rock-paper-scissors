@@ -3,25 +3,33 @@
     align-items: center;
     justify-content: center;
     flex: 1 auto;
-    padding-top: 70px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .score__content {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 30vw;
+    padding: 0 20px 30px;
     border: 1px solid;
-    padding: 30px 20px;
 }
 
 .content__wrapper {
     display: inline-flex;
     align-items: center;
-    margin-top: 30px;
+    justify-content: center;
 }
 
 .content__column {
-    margin: 0 auto;
+    margin-right: 50px;
+}
+
+@media screen and (min-width: 768px) {
+    .score {
+        margin-bottom: 50px;
+    }
+
+    .score__content {
+        width: 30vw;
+    }
 }

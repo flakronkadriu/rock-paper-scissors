@@ -51,7 +51,7 @@ export class Game {
     };
   }
 
-  static userChoose(state: IGame, userInput: ConsoleType): IGame {
+  static userSelection(state: IGame, userInput: ConsoleType): IGame {
     const computerInput = this.getRandomConsole();
     const result = this.getSelectionResult(userInput, computerInput);
     const newState = {
@@ -65,7 +65,7 @@ export class Game {
     return this.getStateFromResult(newState, result);
   }
 
-  static computerChoose(state: IGame): IGame {
+  static computerSelection(state: IGame): IGame {
     const userInput = this.getRandomConsole();
     const computerInput = this.getRandomConsole();
     const result = this.getSelectionResult(userInput, computerInput);

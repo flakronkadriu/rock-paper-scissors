@@ -8,6 +8,7 @@ import Confused from "../../asserts/confused.png";
 
 import "./ResultMessage.scss";
 import { Result } from "../../logic/Result/service/Result";
+import { useMediaQuerySmall } from "../media-query";
 
 const resultToImage = {
   [ResultEnum.DRAW]: Confused,
@@ -17,13 +18,17 @@ const resultToImage = {
 
 const ResultMessage: React.FunctionComponent<ResultMessageProps> = ({
   result,
-}) => (
-  <div className="result">
-    <div className="result__headline">
-      <h1 className="result__h1">{Result.getResultMessage(result)}</h1>
-      <Picture src={resultToImage[result]} width={80} height={80} />
+}) => {
+  const isSmall = useMediaQuerySmall();
+
+  return (
+    <div className="result">
+      <div className="result__headline">
+        <h1 className="result__h1">{Result.getResultMessage(result)}</h1>
+        <Picture src={resultToImage[result]} height={isSmall ? 50 : 80} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default ResultMessage;

@@ -8,3 +8,9 @@
     background: #e1e6e2;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .console {
+        padding: 30px;
+    }
+}

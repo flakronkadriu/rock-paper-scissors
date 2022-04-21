@@ -1,25 +1,41 @@
 .game-selection {
     flex: 1 auto;
-    padding: 30px 50px;
     justify-content: center;
 }
 
 .game-selection__container {
     display: inline-flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    margin-bottom: 50px;
 }
 
 .container__consoles {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    margin-bottom: 10px;
 }
 
-.container__random {
-    margin-top: 50px;
+.console__left {
+    margin-right: 30px;
 }
 
-.game-selection__container .console {
-    margin-left: 50px;
+.console__bottom {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .game-selection {
+        margin-top: 30px;
+    }
+
+    .container__consoles {
+        justify-content: center;
+    }
+
+    .game-selection__container .console {
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
 }

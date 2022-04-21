@@ -13,7 +13,7 @@ const Score: React.FunctionComponent<IGameContext> = ({ wins, lose }) => (
         <div className="content__column">
           <Points title="Wins" score={wins} />
         </div>
-        <div className="content__column">
+        <div>
           <Points title="Lose" score={lose} />
         </div>
       </div>

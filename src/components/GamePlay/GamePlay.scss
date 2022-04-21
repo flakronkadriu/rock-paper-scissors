@@ -1,5 +1,11 @@
 .game__wrapper {
     margin: 0 auto;
-    height: 100%;
     text-align: center;
+    padding: 50px 150px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .game__wrapper {
+        padding: 20px 30px;
+    }
 }

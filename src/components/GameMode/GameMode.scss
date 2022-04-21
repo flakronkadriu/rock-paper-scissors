@@ -9,7 +9,6 @@
     width: 30vw;
     border: 1px solid;
     padding: 30px 20px;
-    box-shadow: 1px 3px #ccc8c8;
 }
 
 .game-mode__content {
@@ -26,4 +25,10 @@
 .content__btn_player {
     margin-top: 30px;
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .game-mode__wrapper {
+        width: 50vw;
+    }
 }

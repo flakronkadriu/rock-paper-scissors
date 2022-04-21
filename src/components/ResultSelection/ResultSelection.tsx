@@ -8,6 +8,7 @@ import Paper from "../../asserts/paper.png";
 import Scissors from "../../asserts/scissors.png";
 
 import "./ResultSelection.scss";
+import { useMediaQuerySmall } from "../media-query";
 
 const resultToImage = {
   [ConsoleType.Paper]: Paper,
@@ -18,17 +19,26 @@ const resultToImage = {
 const ResultSelection: React.FunctionComponent<ResultSelectionProps> = ({
   userInput,
   computerInput,
-}) => (
-  <div className="result-selection">
-    <div className="result-selection__column">
-      <h1>Your selection</h1>
-      <Picture src={resultToImage[userInput]} height={150} />
+}) => {
+  const isSmall = useMediaQuerySmall();
+
+  return (
+    <div className="result-selection">
+      <div className="result-selection__column">
+        <h1>Your selection</h1>
+        <br />
+        <Picture src={resultToImage[userInput]} height={isSmall ? 80 : 150} />
+      </div>
+      <div>
+        <h1>Computer selection</h1>
+        <br />
+        <Picture
+          src={resultToImage[computerInput]}
+          height={isSmall ? 80 : 150}
+        />
+      </div>
     </div>
-    <div className="result-selection__column">
-      <h1>Computer selection</h1>
-      <Picture src={resultToImage[computerInput]} height={150} />
-    </div>
-  </div>
-);
+  );
+};
 
 export default ResultSelection;

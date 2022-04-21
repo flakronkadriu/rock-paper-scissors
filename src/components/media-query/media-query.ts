@@ -11,3 +11,9 @@ export const useMediaQueryLarge = () => {
     minWidth: 1224,
   });
 };
+
+export const useMediaQueryRetina = () => {
+  return useMediaQueryDefault({
+    minResolution: "2dppx",
+  });
+};

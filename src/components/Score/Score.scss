@@ -33,3 +33,13 @@
         width: 30vw;
     }
 }
+
+@media (resolution: 2dppx) {
+    .score {
+        margin-bottom: 10px;
+    }
+
+    .score__content {
+        width: 30vw;
+    }
+}

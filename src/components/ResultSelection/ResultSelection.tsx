@@ -9,6 +9,7 @@ import Scissors from "../../asserts/scissors.png";
 
 import "./ResultSelection.scss";
 import { useMediaQuerySmall } from "../media-query";
+import { useMediaQueryRetina } from "../media-query/media-query";
 
 const resultToImage = {
   [ConsoleType.Paper]: Paper,
@@ -21,21 +22,25 @@ const ResultSelection: React.FunctionComponent<ResultSelectionProps> = ({
   computerInput,
 }) => {
   const isSmall = useMediaQuerySmall();
+  const isRetina = useMediaQueryRetina();
+
+  const getHeight = () => {
+    if (isSmall) return 80;
+    if (isRetina) return 100;
+    return 150;
+  };
 
   return (
     <div className="result-selection">
       <div className="result-selection__column">
         <h1>Your selection</h1>
         <br />
-        <Picture src={resultToImage[userInput]} height={isSmall ? 80 : 150} />
+        <Picture src={resultToImage[userInput]} height={getHeight()} />
       </div>
       <div>
         <h1>Computer selection</h1>
         <br />
-        <Picture
-          src={resultToImage[computerInput]}
-          height={isSmall ? 80 : 150}
-        />
+        <Picture src={resultToImage[computerInput]} height={getHeight()} />
       </div>
     </div>
   );

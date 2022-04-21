@@ -34,7 +34,7 @@
     }
 }
 
-@media (resolution: 2dppx) {
+@media (min-resolution: 2dppx) {
     .score {
         margin-bottom: 10px;
     }

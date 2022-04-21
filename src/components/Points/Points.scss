@@ -37,7 +37,7 @@
     }
 }
 
-@media (resolution: 2dppx) {
+@media (min-resolution: 2dppx) {
     .points {
         width: 80px;
         padding: 10px;

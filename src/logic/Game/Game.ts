@@ -16,6 +16,12 @@ export class Game {
     };
   }
 
+  static create(raw: IGame): IGame {
+    return {
+      ...raw,
+    };
+  }
+
   static getRandomConsole(): ConsoleType {
     return consoleTypes[Math.floor(Math.random() * 3)];
   }
@@ -49,6 +55,14 @@ export class Game {
       gameStatus,
       isPlaying: gameStatus === GameStatus.Started,
     };
+  }
+
+  static playAgain() {
+    return this.create({
+      ...this.createDefault(),
+      isPlaying: true,
+      gameStatus: GameStatus.Started,
+    });
   }
 
   static userSelection(state: IGame, userInput: ConsoleType): IGame {

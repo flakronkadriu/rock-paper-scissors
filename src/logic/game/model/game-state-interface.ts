@@ -2,7 +2,7 @@ import { ConsoleType } from "../../console/model";
 import { ResultEnum } from "../../result/model";
 import { GameStatus } from "./game-status-enum";
 
-export interface GameStateBase {
+export interface GameState {
   gameStatus: GameStatus;
   wins: number;
   lose: number;

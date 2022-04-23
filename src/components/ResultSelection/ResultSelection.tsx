@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Picture } from "../base";
-import { ResultSelectionProps } from "../../logic/result/model";
+import { ResultSelectionProps } from "./model";
 import { ConsoleType } from "../../logic/console/model";
 import Rock from "../../asserts/rock.png";
 import Paper from "../../asserts/paper.png";

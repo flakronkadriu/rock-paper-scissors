@@ -1,6 +1,6 @@
 import React from "react";
 import { ButtonMode, ButtonSize } from "../base/Button";
-import { GameModeProps } from "../../logic/game-mode";
+import { GameModeProps } from "./model";
 import { GameStateExtended } from "../GamePlay/context";
 import { Game } from "../../logic/game/Game";
 import { GameStatus } from "../../logic/game/model";
@@ -36,4 +36,4 @@ const GameMode: React.FunctionComponent<Props> = (props) => (
   </div>
 );
 
-export default withGameStateContext(GameMode);
+export const GameModeEnhanced = withGameStateContext(GameMode);

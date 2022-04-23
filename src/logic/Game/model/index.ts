@@ -1,4 +1,2 @@
-export type { GameStateBase as GameState } from "./game-state-interface";
-export type { IUserLoses } from "./user-loses";
+export type { GameState } from "./game-state-interface";
 export { GameStatus } from "./game-status-enum";
-export { userLoses } from "./user-loses";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import GameMode from "../GameMode/GameMode";
+import { GameMode } from "../GameMode";
 import GamePlay from "../GamePlay/GamePlay";
 import { Game } from "../../logic/game/Game";
 import { GameStatus, GameState } from "../../logic/game/model";

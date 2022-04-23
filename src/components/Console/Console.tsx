@@ -1,5 +1,5 @@
 import React from "react";
-import { ConsoleProps } from "../../logic/console/model";
+import { ConsoleProps } from "./model";
 import { GameStateExtended } from "../GamePlay/context";
 import { Game } from "../../logic/game/Game";
 import { withGameStateContext } from "../../shared/utils/withContext";
@@ -31,4 +31,4 @@ const Console: React.FunctionComponent<Props> = ({ type, image, ...props }) => {
   );
 };
 
-export default withGameStateContext(Console);
+export const ConsoleEnhanced = withGameStateContext(Console);

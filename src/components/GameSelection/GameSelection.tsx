@@ -4,7 +4,7 @@ import Rock from "../../asserts/rock.png";
 import Paper from "../../asserts/paper.png";
 import Scissors from "../../asserts/scissors.png";
 import { ConsoleType } from "../../logic/console/model";
-import Console from "../Console/Console";
+import { Console } from "../Console";
 import { Button } from "../base";
 import { ButtonMode, ButtonSize } from "../base/Button";
 import { withGameStateContext } from "../../shared/utils/withContext";

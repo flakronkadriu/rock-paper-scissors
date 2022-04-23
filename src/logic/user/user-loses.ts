@@ -1,10 +1,10 @@
-import { ConsoleType } from "../../console/model";
+import { ConsoleType } from "../console/model";
 
-export interface IUserLoses {
+export interface UserLose {
   [key: string]: ConsoleType;
 }
 
-export const userLoses: IUserLoses = {
+export const userLoses: UserLose = {
   [ConsoleType.Rock]: ConsoleType.Paper,
   [ConsoleType.Scissors]: ConsoleType.Rock,
   [ConsoleType.Paper]: ConsoleType.Scissors,

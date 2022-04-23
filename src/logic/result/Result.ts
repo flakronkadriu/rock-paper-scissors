@@ -1,4 +1,4 @@
-import { ResultEnum } from "../model";
+import { ResultEnum } from "./model";
 
 export class Result {
   static getResultMessage(value: ResultEnum) {

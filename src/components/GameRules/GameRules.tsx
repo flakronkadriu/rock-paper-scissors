@@ -6,7 +6,7 @@ import { Button, Picture } from "../base";
 import { ButtonMode } from "../base/Button";
 import { useMediaQuerySmall } from "../media-query";
 import { useMediaQueryRetina } from "../media-query/media-query";
-import { GameRulesProps } from "../../logic/game-rules/model";
+import { GameRulesProps } from "./model";
 
 import "./GameRules.scss";
 

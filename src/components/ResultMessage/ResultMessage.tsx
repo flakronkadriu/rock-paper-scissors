@@ -1,12 +1,13 @@
 import React from "react";
 
-import { ResultEnum, ResultMessageProps } from "../../logic/result/model";
+import { ResultEnum } from "../../logic/result/model";
 import { Picture } from "../base";
 import Confetti from "../../asserts/confetti.png";
 import Sad from "../../asserts/sad.png";
 import Confused from "../../asserts/confused.png";
-import { Result } from "../../logic/result/service/Result";
+import { Result } from "../../logic/result/Result";
 import { useMediaQuerySmall } from "../media-query";
+import { ResultMessageProps } from "./model";
 
 import "./ResultMessage.scss";
 

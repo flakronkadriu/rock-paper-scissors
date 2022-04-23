@@ -1,5 +1,5 @@
 import React from "react";
-import { ResultEnum, ResultMessageProps } from "../../logic/Result/model";
+import { ResultEnum, ResultMessageProps } from "../../logic/result/model";
 import Picture from "../base/Picture/Picture";
 
 import Confetti from "../../asserts/confetti.png";
@@ -7,13 +7,13 @@ import Sad from "../../asserts/sad.png";
 import Confused from "../../asserts/confused.png";
 
 import "./ResultMessage.scss";
-import { Result } from "../../logic/Result/service/Result";
+import { Result } from "../../logic/result/service/Result";
 import { useMediaQuerySmall } from "../media-query";
 
 const resultToImage = {
-  [ResultEnum.DRAW]: Confused,
-  [ResultEnum.WIN]: Confetti,
-  [ResultEnum.LOST]: Sad,
+  [ResultEnum.Draw]: Confused,
+  [ResultEnum.Win]: Confetti,
+  [ResultEnum.Lose]: Sad,
 };
 
 const ResultMessage: React.FunctionComponent<ResultMessageProps> = ({

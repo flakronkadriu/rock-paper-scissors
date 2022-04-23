@@ -1,19 +1,17 @@
 import React from "react";
-import ResultMessage from "../ResultMessage/ResultMessage";
 
 import "./GameResults.scss";
 import ResultSelection from "../ResultSelection/ResultSelection";
 import Button from "../base/Button/Button";
-import { ButtonSize } from "../../logic/Button/model";
+import { ButtonSize } from "../../logic/button/model";
 import { withGameContext } from "../../shared/utils/withContext";
-import { Game } from "../../logic/Game/Game";
-import { IGameContext } from "../../logic/Game/context";
+import { Game } from "../../logic/game/Game";
+import { GameStateContext } from "../../logic/game/context";
 
-const GameResults: React.FunctionComponent<IGameContext> = (props) => {
+const GameResults: React.FunctionComponent<GameStateContext> = (props) => {
   return (
     <div className="game_results">
       <div className="game_result__content">
-        <ResultMessage result={props.result} />
         <div className="content__btn">
           <Button
             size={ButtonSize.Medium}

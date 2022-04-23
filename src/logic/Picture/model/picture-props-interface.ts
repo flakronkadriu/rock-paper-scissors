@@ -5,4 +5,5 @@ export interface PictureProps {
   height?: string | number;
   width?: string | number;
   imageFit?: ImageFit;
+  alt?: string;
 }

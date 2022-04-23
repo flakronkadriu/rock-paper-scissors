@@ -1,14 +1,17 @@
 import React from "react";
-import { ButtonSize } from "../../logic/Button/model";
-import { IGameContext } from "../../logic/Game/context";
-import { Game } from "../../logic/Game/Game";
-import { GameStatus } from "../../logic/Game/model";
+import { ButtonMode, ButtonSize } from "../../logic/button/model";
+import { GameModeProps } from "../../logic/game-mode";
+import { GameStateContext } from "../../logic/game/context";
+import { Game } from "../../logic/game/Game";
+import { GameStatus } from "../../logic/game/model";
 import { withGameContext } from "../../shared/utils/withContext";
 import Button from "../base/Button/Button";
 
 import "./GameMode.scss";
 
-const GameMode: React.FunctionComponent<IGameContext> = (props) => (
+type Props = GameModeProps & GameStateContext;
+
+const GameMode: React.FunctionComponent<Props> = (props) => (
   <div className="game-mode">
     <div className="game-mode__wrapper">
       <div className="game-mode__content">
@@ -25,6 +28,9 @@ const GameMode: React.FunctionComponent<IGameContext> = (props) => (
             Lets play!
           </Button>
         </div>
+        <Button mode={ButtonMode.Secondary} onClick={props.openModal}>
+          Game rules
+        </Button>
       </div>
     </div>
   </div>

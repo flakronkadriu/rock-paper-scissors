@@ -1,5 +1,5 @@
-import { IGame } from "../model";
+import { GameState } from "../model";
 
-export interface IGameContext extends IGame {
-  setGameState: (newState: IGame) => void;
+export interface GameStateContext extends GameState {
+  setGameState: (newState: GameState) => void;
 }

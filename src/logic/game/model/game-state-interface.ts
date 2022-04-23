@@ -1,8 +1,8 @@
-import { ConsoleType } from "../../Console/model";
-import { ResultEnum } from "../../Result/model";
+import { ConsoleType } from "../../console/model";
+import { ResultEnum } from "../../result/model";
 import { GameStatus } from "./game-status-enum";
 
-export interface IGame {
+export interface GameState {
   gameStatus: GameStatus;
   wins: number;
   lose: number;

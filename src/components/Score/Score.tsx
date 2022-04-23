@@ -1,11 +1,11 @@
 import React from "react";
-import { IGameContext } from "../../logic/Game/context";
+import { GameStateContext } from "../../logic/game/context";
 import { withGameContext } from "../../shared/utils/withContext";
 import Points from "../Points/Points";
 
 import "./Score.scss";
 
-const Score: React.FunctionComponent<IGameContext> = ({ wins, lose }) => (
+const Score: React.FunctionComponent<GameStateContext> = ({ wins, lose }) => (
   <div className="score">
     <div className="score__content">
       <h1>Score</h1>

@@ -1,2 +1,2 @@
-export type { IGameContext } from "./game-context-interface";
+export type { GameStateContext } from "./game-context-interface";
 export { GameContext } from "./game-context";

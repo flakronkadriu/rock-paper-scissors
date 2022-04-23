@@ -1,4 +1,4 @@
-import { ConsoleType } from "../../Console/model";
+import { ConsoleType } from "../../console/model";
 
 export interface IUserLoses {
   [key: string]: ConsoleType;

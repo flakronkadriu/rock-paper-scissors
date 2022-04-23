@@ -1,9 +1,9 @@
 import { noop } from "lodash";
 import React from "react";
 import { Game } from "../Game";
-import { IGameContext } from "./game-context-interface";
+import { GameStateContext } from "./game-context-interface";
 
-export const GameContext = React.createContext<IGameContext>({
+export const GameContext = React.createContext<GameStateContext>({
   ...Game.createDefault(),
   setGameState: noop,
 });

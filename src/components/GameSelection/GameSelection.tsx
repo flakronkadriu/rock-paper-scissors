@@ -4,15 +4,15 @@ import "./GameSelection.scss";
 import Rock from "../../asserts/rock.png";
 import Paper from "../../asserts/paper.png";
 import Scissors from "../../asserts/scissors.png";
-import { ConsoleType } from "../../logic/Console/model";
+import { ConsoleType } from "../../logic/console/model";
 import Console from "../Console/Console";
 import Button from "../base/Button/Button";
-import { ButtonMode, ButtonSize } from "../../logic/Button/model";
+import { ButtonMode, ButtonSize } from "../../logic/button/model";
 import { withGameContext } from "../../shared/utils/withContext";
-import { Game } from "../../logic/Game/Game";
-import { IGameContext } from "../../logic/Game/context";
+import { Game } from "../../logic/game/Game";
+import { GameStateContext } from "../../logic/game/context";
 
-const GameSelection: React.FunctionComponent<IGameContext> = (props) => (
+const GameSelection: React.FunctionComponent<GameStateContext> = (props) => (
   <div className="game-selection">
     <div className="game-selection__container">
       <div className="container__consoles">
@@ -25,7 +25,7 @@ const GameSelection: React.FunctionComponent<IGameContext> = (props) => (
         <Console type={ConsoleType.Rock} image={Rock} />
       </div>
     </div>
-    <div>
+    <div className="computer__selection">
       <Button
         mode={ButtonMode.Secondary}
         size={ButtonSize.Medium}

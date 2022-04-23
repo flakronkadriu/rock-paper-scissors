@@ -1,5 +1,5 @@
 import React from "react";
-import { PointsProps } from "../../logic/Points/model";
+import { PointsProps } from "../../logic/points/model";
 
 import "./Points.scss";
 

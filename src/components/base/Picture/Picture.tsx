@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageFit, PictureProps } from "../../../logic/Picture/model";
+import { ImageFit, PictureProps } from "../../../logic/picture/model";
 
 import "./Picture.scss";
 
@@ -12,12 +12,14 @@ const Picture: React.FunctionComponent<PictureProps> = ({
   width,
   height,
   imageFit,
+  alt,
 }) => (
   <img
     className={`img img__fit--${imageFit}`}
     src={src}
     width={width}
     height={height}
+    alt={alt}
   />
 );
 

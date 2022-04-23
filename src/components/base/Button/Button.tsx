@@ -3,7 +3,7 @@ import {
   ButtonMode,
   ButtonProps,
   ButtonSize,
-} from "../../../logic/Button/model";
+} from "../../../logic/button/model";
 
 import "./Button.scss";
 

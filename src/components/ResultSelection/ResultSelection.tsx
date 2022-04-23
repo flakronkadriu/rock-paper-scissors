@@ -1,7 +1,7 @@
 import React from "react";
 import Picture from "../base/Picture/Picture";
-import { ResultSelectionProps } from "../../logic/Result/model";
-import { ConsoleType } from "../../logic/Console/model";
+import { ResultSelectionProps } from "../../logic/result/model";
+import { ConsoleType } from "../../logic/console/model";
 
 import Rock from "../../asserts/rock.png";
 import Paper from "../../asserts/paper.png";
@@ -33,12 +33,12 @@ const ResultSelection: React.FunctionComponent<ResultSelectionProps> = ({
   return (
     <div className="result-selection">
       <div className="result-selection__column">
-        <h1>Your selection</h1>
+        <h1>You</h1>
         <br />
         <Picture src={resultToImage[userInput]} height={getHeight()} />
       </div>
       <div>
-        <h1>Computer selection</h1>
+        <h1>Computer</h1>
         <br />
         <Picture src={resultToImage[computerInput]} height={getHeight()} />
       </div>

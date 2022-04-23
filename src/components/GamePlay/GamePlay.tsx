@@ -1,5 +1,5 @@
 import React from "react";
-import { GameStatus, IGame } from "../../logic/Game/model";
+import { GameStatus, GameState } from "../../logic/game/model";
 import { withGameContext } from "../../shared/utils/withContext";
 import GameOver from "../GameOver/GameOver";
 import GameResults from "../GameResults/GameResults";
@@ -8,7 +8,7 @@ import Score from "../Score/Score";
 
 import "./GamePlay.scss";
 
-const GamePlay: React.FunctionComponent<IGame> = ({
+const GamePlay: React.FunctionComponent<GameState> = ({
   isPlaying,
   gameStatus,
 }) => (

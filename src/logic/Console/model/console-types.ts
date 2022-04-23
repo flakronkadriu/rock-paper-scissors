@@ -1,7 +1,3 @@
 import { ConsoleType } from "./console-type-enum";
 
-export const consoleTypes = [
-  ConsoleType.Rock,
-  ConsoleType.Scissors,
-  ConsoleType.Paper,
-];
+export const consoleTypes: Array<ConsoleType> = Object.values(ConsoleType);

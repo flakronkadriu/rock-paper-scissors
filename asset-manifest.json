@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/rock-paper-scissors/static/css/main.788e53ee.css",
-    "main.js": "/rock-paper-scissors/static/js/main.1d3b45e2.js",
+    "main.css": "/rock-paper-scissors/static/css/main.6a318d7e.css",
+    "main.js": "/rock-paper-scissors/static/js/main.6b386eae.js",
     "static/js/787.12bb0be5.chunk.js": "/rock-paper-scissors/static/js/787.12bb0be5.chunk.js",
+    "static/media/game-rules.png": "/rock-paper-scissors/static/media/game-rules.149f6f1b1655075a2f76.png",
     "static/media/rock.png": "/rock-paper-scissors/static/media/rock.b4db7ec61a72530b5d5a.png",
     "static/media/confetti.png": "/rock-paper-scissors/static/media/confetti.ccf6a5fd308969198341.png",
     "static/media/sad.png": "/rock-paper-scissors/static/media/sad.66141ce64168a48da216.png",
     "static/media/scissors.png": "/rock-paper-scissors/static/media/scissors.eab8b3342228439ad013.png",
     "static/media/background.png": "/rock-paper-scissors/static/media/background.cdec11700dcbe1112d48.png",
     "index.html": "/rock-paper-scissors/index.html",
-    "main.788e53ee.css.map": "/rock-paper-scissors/static/css/main.788e53ee.css.map",
-    "main.1d3b45e2.js.map": "/rock-paper-scissors/static/js/main.1d3b45e2.js.map",
+    "static/media/icon-close.svg": "/rock-paper-scissors/static/media/icon-close.bde602ecd1a4e55e0c27137ed651e027.svg",
+    "main.6a318d7e.css.map": "/rock-paper-scissors/static/css/main.6a318d7e.css.map",
+    "main.6b386eae.js.map": "/rock-paper-scissors/static/js/main.6b386eae.js.map",
     "787.12bb0be5.chunk.js.map": "/rock-paper-scissors/static/js/787.12bb0be5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.788e53ee.css",
-    "static/js/main.1d3b45e2.js"
+    "static/css/main.6a318d7e.css",
+    "static/js/main.6b386eae.js"
   ]
 }

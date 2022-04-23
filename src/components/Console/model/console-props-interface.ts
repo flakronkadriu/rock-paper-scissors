@@ -1,4 +1,4 @@
-import { ConsoleType } from "../../../logic/console/model/console-type-enum";
+import { ConsoleType } from "../../../logic/console";
 
 export interface ConsoleProps {
   type: ConsoleType;

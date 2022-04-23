@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Main from "./components/Main/Main";
+import { Main } from "./components/Main/Main";
 import reportWebVitals from "./core/reportWebVitals";
 import "./core/polyfills";
 

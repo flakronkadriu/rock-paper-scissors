@@ -1,11 +1,10 @@
 import React from "react";
-import { ButtonMode, ButtonSize } from "../base/Button";
+import { Button, ButtonMode, ButtonSize } from "../base/Button";
 import { GameModeProps } from "./model";
 import { GameStateExtended } from "../GamePlay/context";
 import { Game } from "../../logic/game/Game";
 import { GameStatus } from "../../logic/game/model";
 import { withGameStateContext } from "../../shared/utils/withContext";
-import { Button } from "../base";
 
 import "./GameMode.scss";
 

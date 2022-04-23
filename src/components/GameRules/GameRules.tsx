@@ -2,8 +2,8 @@ import React from "react";
 
 import GameRulesImg from "../../asserts/game-rules.png";
 import CloseIcon from "../../asserts/icon-close.svg";
-import { Button, Picture } from "../base";
-import { ButtonMode } from "../base/Button";
+import { Button, ButtonMode } from "../base/Button";
+import { Picture } from "../base/Picture";
 import { useMediaQuerySmall } from "../media-query";
 import { useMediaQueryRetina } from "../media-query/media-query";
 import { GameRulesProps } from "./model";
@@ -39,4 +39,4 @@ const GameRules: React.FunctionComponent<Props> = ({ isOpen, closeModal }) => {
   );
 };
 
-export default GameRules;
+export { GameRules };

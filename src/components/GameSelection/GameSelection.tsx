@@ -3,10 +3,9 @@ import React from "react";
 import Rock from "../../asserts/rock.png";
 import Paper from "../../asserts/paper.png";
 import Scissors from "../../asserts/scissors.png";
-import { ConsoleType } from "../../logic/console/model";
+import { ConsoleType } from "../../logic/console";
 import { Console } from "../Console";
-import { Button } from "../base";
-import { ButtonMode, ButtonSize } from "../base/Button";
+import { Button, ButtonMode, ButtonSize } from "../base/Button";
 import { withGameStateContext } from "../../shared/utils/withContext";
 import { Game } from "../../logic/game/Game";
 import { GameStateExtended } from "../GamePlay/context";
@@ -38,4 +37,4 @@ const GameSelection: React.FunctionComponent<GameStateExtended> = (props) => (
   </div>
 );
 
-export default withGameStateContext(GameSelection);
+export const GameSelectionEnhanced = withGameStateContext(GameSelection);

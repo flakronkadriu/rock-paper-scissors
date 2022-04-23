@@ -1,4 +1,4 @@
-import { ConsoleType } from "../../../logic/console/model";
+import { ConsoleType } from "../../../logic/console";
 
 export interface ResultSelectionProps {
   userInput: ConsoleType;

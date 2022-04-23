@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ResultEnum } from "../../logic/result/model";
-import { Picture } from "../base";
+import { Picture } from "../base/Picture";
 import Confetti from "../../asserts/confetti.png";
 import Sad from "../../asserts/sad.png";
 import Confused from "../../asserts/confused.png";
@@ -32,4 +32,4 @@ const ResultMessage: React.FunctionComponent<ResultMessageProps> = ({
   );
 };
 
-export default ResultMessage;
+export { ResultMessage };

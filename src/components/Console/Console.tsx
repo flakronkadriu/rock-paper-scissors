@@ -3,7 +3,7 @@ import { ConsoleProps } from "./model";
 import { GameStateExtended } from "../GamePlay/context";
 import { Game } from "../../logic/game/Game";
 import { withGameStateContext } from "../../shared/utils/withContext";
-import { Picture } from "../base";
+import { Picture } from "../base/Picture";
 import { useMediaQuerySmall } from "../media-query";
 import { useMediaQueryRetina } from "../media-query/media-query";
 

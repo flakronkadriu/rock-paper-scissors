@@ -1,11 +1,10 @@
 import React from "react";
-import { ButtonSize } from "../base/Button";
 import { GameStateExtended } from "../GamePlay/context";
 import { Game } from "../../logic/game/Game";
 import { ResultEnum } from "../../logic/result/model";
 import { withGameStateContext } from "../../shared/utils/withContext";
-import { Button } from "../base";
-import ResultMessage from "../ResultMessage/ResultMessage";
+import { Button, ButtonSize } from "../base/Button";
+import { ResultMessage } from "../ResultMessage";
 
 import "./GameOver.scss";
 
@@ -26,4 +25,4 @@ const GameOver: React.FunctionComponent<GameStateExtended> = (props) => (
   </div>
 );
 
-export default withGameStateContext(GameOver);
+export const GameOverEnhanced = withGameStateContext(GameOver);

@@ -1,4 +1,4 @@
-import { ConsoleType, consoleTypes } from "../console/model";
+import { ConsoleType, consoleTypes } from "../console";
 import { ResultEnum } from "../result/model";
 import { userLoses } from "../user";
 import { GameStatus, GameState } from "./model";

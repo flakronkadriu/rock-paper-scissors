@@ -1,8 +1,7 @@
 import React from "react";
 
-import ResultSelection from "../ResultSelection/ResultSelection";
-import { Button } from "../base";
-import { ButtonSize } from "../base/Button";
+import { ResultSelection } from "../ResultSelection";
+import { Button, ButtonSize } from "../base/Button";
 import { withGameStateContext } from "../../shared/utils/withContext";
 import { Game } from "../../logic/game/Game";
 import { GameStateExtended } from "../GamePlay/context";
@@ -29,4 +28,4 @@ const GameResults: React.FunctionComponent<GameStateExtended> = (props) => {
     </div>
   );
 };
-export default withGameStateContext(GameResults);
+export const GameResultsEnhanced = withGameStateContext(GameResults);

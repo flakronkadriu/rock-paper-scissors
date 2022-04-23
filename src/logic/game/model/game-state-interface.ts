@@ -1,4 +1,4 @@
-import { ConsoleType } from "../../console/model";
+import { ConsoleType } from "../../console";
 import { ResultEnum } from "../../result/model";
 import { GameStatus } from "./game-status-enum";
 

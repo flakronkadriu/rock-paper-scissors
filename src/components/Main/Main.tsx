@@ -1,11 +1,11 @@
 import React from "react";
 
 import { GameMode } from "../GameMode";
-import GamePlay from "../GamePlay/GamePlay";
+import { GamePlay } from "../GamePlay";
 import { Game } from "../../logic/game/Game";
 import { GameStatus, GameState } from "../../logic/game/model";
 import { GameStateContext, GameStateExtended } from "../GamePlay/context";
-import GameRules from "../GameRules/GameRules";
+import { GameRules } from "../GameRules/GameRules";
 
 import "./Main.scss";
 
@@ -33,4 +33,4 @@ const Main: React.FC = () => {
   );
 };
 
-export default Main;
+export { Main };

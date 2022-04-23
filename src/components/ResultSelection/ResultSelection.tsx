@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Picture } from "../base";
+import { Picture } from "../base/Picture";
 import { ResultSelectionProps } from "./model";
-import { ConsoleType } from "../../logic/console/model";
+import { ConsoleType } from "../../logic/console";
 import Rock from "../../asserts/rock.png";
 import Paper from "../../asserts/paper.png";
 import Scissors from "../../asserts/scissors.png";
@@ -46,4 +46,4 @@ const ResultSelection: React.FunctionComponent<ResultSelectionProps> = ({
   );
 };
 
-export default ResultSelection;
+export { ResultSelection };

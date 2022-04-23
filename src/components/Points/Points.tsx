@@ -10,4 +10,4 @@ const Points: React.FunctionComponent<PointsProps> = ({ title, score }) => (
   </div>
 );
 
-export default Points;
+export { Points };

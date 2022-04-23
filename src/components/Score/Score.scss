@@ -14,6 +14,15 @@
     border: 1px solid;
 }
 
+.score__title {
+    font-size: 2em;
+    font-weight: 700;
+    font-style: italic;
+    color: #ffff;
+    text-shadow: 2px 2px #ff6f00;
+    margin: 20px 0;
+}
+
 .content__wrapper {
     display: inline-flex;
     align-items: center;
@@ -31,6 +40,10 @@
 
     .score__content {
         width: 30vw;
+    }
+
+    .score__title {
+        font-size: 3em;
     }
 }
 

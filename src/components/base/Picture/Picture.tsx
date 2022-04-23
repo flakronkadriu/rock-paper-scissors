@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageFit, PictureProps } from "../../../logic/picture/model";
+import { ImageFit, PictureProps } from "./model";
 
 import "./Picture.scss";
 
@@ -25,4 +25,4 @@ const Picture: React.FunctionComponent<PictureProps> = ({
 
 Picture.defaultProps = defaultProps;
 
-export default Picture;
+export { Picture };

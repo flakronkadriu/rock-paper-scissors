@@ -1,18 +1,18 @@
 import React from "react";
-import { ButtonSize } from "../../logic/button/model";
-import { GameStateContext } from "../../logic/game/context";
+import { ButtonSize } from "../base/Button";
+import { GameStateExtended } from "../GamePlay/context";
 import { Game } from "../../logic/game/Game";
 import { ResultEnum } from "../../logic/result/model";
-import { withGameContext } from "../../shared/utils/withContext";
-import Button from "../base/Button/Button";
+import { withGameStateContext } from "../../shared/utils/withContext";
+import { Button } from "../base";
 import ResultMessage from "../ResultMessage/ResultMessage";
 
 import "./GameOver.scss";
 
-const GameOver: React.FunctionComponent<GameStateContext> = (props) => (
+const GameOver: React.FunctionComponent<GameStateExtended> = (props) => (
   <div className="game_over">
     <div className="game_over__wrapper">
-      <h1>Game over!</h1>
+      <p className="game_over__title">Game over!</p>
       <ResultMessage
         result={props.wins === 10 ? ResultEnum.Win : ResultEnum.Lose}
       />
@@ -26,4 +26,4 @@ const GameOver: React.FunctionComponent<GameStateContext> = (props) => (
   </div>
 );
 
-export default withGameContext(GameOver);
+export default withGameStateContext(GameOver);

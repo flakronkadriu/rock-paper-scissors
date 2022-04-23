@@ -1,6 +1,6 @@
 import React from "react";
 import { GameStatus, GameState } from "../../logic/game/model";
-import { withGameContext } from "../../shared/utils/withContext";
+import { withGameStateContext } from "../../shared/utils/withContext";
 import GameOver from "../GameOver/GameOver";
 import GameResults from "../GameResults/GameResults";
 import GameSelection from "../GameSelection/GameSelection";
@@ -24,4 +24,4 @@ const GamePlay: React.FunctionComponent<GameState> = ({
   </div>
 );
 
-export default withGameContext(GamePlay);
+export default withGameStateContext(GamePlay);

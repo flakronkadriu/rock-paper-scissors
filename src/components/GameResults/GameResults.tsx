@@ -1,14 +1,15 @@
 import React from "react";
 
-import "./GameResults.scss";
 import ResultSelection from "../ResultSelection/ResultSelection";
-import Button from "../base/Button/Button";
-import { ButtonSize } from "../../logic/button/model";
-import { withGameContext } from "../../shared/utils/withContext";
+import { Button } from "../base";
+import { ButtonSize } from "../base/Button";
+import { withGameStateContext } from "../../shared/utils/withContext";
 import { Game } from "../../logic/game/Game";
-import { GameStateContext } from "../../logic/game/context";
+import { GameStateExtended } from "../GamePlay/context";
 
-const GameResults: React.FunctionComponent<GameStateContext> = (props) => {
+import "./GameResults.scss";
+
+const GameResults: React.FunctionComponent<GameStateExtended> = (props) => {
   return (
     <div className="game_results">
       <div className="game_result__content">
@@ -28,4 +29,4 @@ const GameResults: React.FunctionComponent<GameStateContext> = (props) => {
     </div>
   );
 };
-export default withGameContext(GameResults);
+export default withGameStateContext(GameResults);

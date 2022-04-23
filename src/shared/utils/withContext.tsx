@@ -1,15 +1,17 @@
 import React from "react";
-import { GameStateContext } from "../../logic/game/context";
-import { GameContext } from "../../logic/game/context/game-context";
+import {
+  GameStateContext,
+  GameStateExtended,
+} from "../../components/GamePlay/context";
 
-export const withGameContext = <P extends object>(
+export const withGameStateContext = <P extends object>(
   WrappedComponent: React.ComponentType<P>
-): React.FC<Omit<P, keyof GameStateContext>> => {
+): React.FC<Omit<P, keyof GameStateExtended>> => {
   const displayName =
     WrappedComponent.displayName || WrappedComponent.name || "Component";
 
-  const GameComponent = (componentProps: Omit<P, keyof GameStateContext>) => {
-    const values = React.useContext<GameStateContext>(GameContext);
+  const GameComponent = (componentProps: Omit<P, keyof GameStateExtended>) => {
+    const values = React.useContext<GameStateExtended>(GameStateContext);
 
     const props = { ...componentProps, ...values };
 

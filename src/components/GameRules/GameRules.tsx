@@ -1,15 +1,14 @@
 import React from "react";
 
-import Picture from "../base/Picture/Picture";
 import GameRulesImg from "../../asserts/game-rules.png";
 import CloseIcon from "../../asserts/icon-close.svg";
-import Button from "../base/Button/Button";
-
-import "./GameRules.scss";
-import { ButtonMode } from "../../logic/button/model";
+import { Button, Picture } from "../base";
+import { ButtonMode } from "../base/Button";
 import { useMediaQuerySmall } from "../media-query";
 import { useMediaQueryRetina } from "../media-query/media-query";
 import { GameRulesProps } from "../../logic/game-rules/model";
+
+import "./GameRules.scss";
 
 type Props = GameRulesProps;
 

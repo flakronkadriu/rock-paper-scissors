@@ -1,13 +1,13 @@
 import React from "react";
+
 import GameMode from "../GameMode/GameMode";
 import GamePlay from "../GamePlay/GamePlay";
-
-import "./Main.scss";
-import { GameContext } from "../../logic/game/context/game-context";
 import { Game } from "../../logic/game/Game";
 import { GameStatus, GameState } from "../../logic/game/model";
-import { GameStateContext } from "../../logic/game/context";
+import { GameStateContext, GameStateExtended } from "../GamePlay/context";
 import GameRules from "../GameRules/GameRules";
+
+import "./Main.scss";
 
 const Main: React.FC = () => {
   const [gameState, setGameState] = React.useState<GameState>(
@@ -18,16 +18,16 @@ const Main: React.FC = () => {
   const openModalHandler = () => setIsOpen(true);
   const closeModalHandler = () => setIsOpen(false);
 
-  const values = { ...gameState, setGameState } as GameStateContext;
+  const values = { ...gameState, setGameState } as GameStateExtended;
 
   return (
     <div className="main">
-      <GameContext.Provider value={values}>
+      <GameStateContext.Provider value={values}>
         {values.gameStatus === GameStatus.Init && (
           <GameMode openModal={openModalHandler} />
         )}
         {values.gameStatus !== GameStatus.Init && <GamePlay />}
-      </GameContext.Provider>
+      </GameStateContext.Provider>
       <GameRules isOpen={isOpen} closeModal={closeModalHandler} />
     </div>
   );

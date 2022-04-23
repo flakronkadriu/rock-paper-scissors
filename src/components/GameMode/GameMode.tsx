@@ -1,15 +1,15 @@
 import React from "react";
-import { ButtonMode, ButtonSize } from "../../logic/button/model";
+import { ButtonMode, ButtonSize } from "../base/Button";
 import { GameModeProps } from "../../logic/game-mode";
-import { GameStateContext } from "../../logic/game/context";
+import { GameStateExtended } from "../GamePlay/context";
 import { Game } from "../../logic/game/Game";
 import { GameStatus } from "../../logic/game/model";
-import { withGameContext } from "../../shared/utils/withContext";
-import Button from "../base/Button/Button";
+import { withGameStateContext } from "../../shared/utils/withContext";
+import { Button } from "../base";
 
 import "./GameMode.scss";
 
-type Props = GameModeProps & GameStateContext;
+type Props = GameModeProps & GameStateExtended;
 
 const GameMode: React.FunctionComponent<Props> = (props) => (
   <div className="game-mode">
@@ -36,4 +36,4 @@ const GameMode: React.FunctionComponent<Props> = (props) => (
   </div>
 );
 
-export default withGameContext(GameMode);
+export default withGameStateContext(GameMode);

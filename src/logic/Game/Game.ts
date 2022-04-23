@@ -1,10 +1,10 @@
 import { ConsoleType, consoleTypes } from "../console/model";
 import { ResultEnum } from "../result/model";
 import { GameStatus, userLoses } from "./model";
-import { GameState } from "./model/game-state-interface";
+import { GameStateBase } from "./model/game-state-interface";
 
 export class Game {
-  static createDefault(): GameState {
+  static createDefault(): GameStateBase {
     return {
       wins: 0,
       lose: 0,
@@ -16,7 +16,7 @@ export class Game {
     };
   }
 
-  static create(raw: GameState): GameState {
+  static create(raw: GameStateBase): GameStateBase {
     return {
       ...raw,
     };
@@ -26,7 +26,7 @@ export class Game {
     return consoleTypes[Math.floor(Math.random() * max)];
   }
 
-  static incrementWins(state: GameState): GameState {
+  static incrementWins(state: GameStateBase): GameStateBase {
     return {
       ...state,
       wins: state.wins + 1,
@@ -34,7 +34,7 @@ export class Game {
     };
   }
 
-  static incrementLose(state: GameState): GameState {
+  static incrementLose(state: GameStateBase): GameStateBase {
     return {
       ...state,
       lose: state.lose + 1,
@@ -42,14 +42,17 @@ export class Game {
     };
   }
 
-  static setIsPlaying(state: GameState, isPlaying: boolean): GameState {
+  static setIsPlaying(state: GameStateBase, isPlaying: boolean): GameStateBase {
     return {
       ...state,
       isPlaying,
     };
   }
 
-  static setGameStatus(state: GameState, gameStatus: GameStatus): GameState {
+  static setGameStatus(
+    state: GameStateBase,
+    gameStatus: GameStatus
+  ): GameStateBase {
     return {
       ...state,
       gameStatus,
@@ -65,7 +68,10 @@ export class Game {
     });
   }
 
-  static userSelection(state: GameState, userInput: ConsoleType): GameState {
+  static userSelection(
+    state: GameStateBase,
+    userInput: ConsoleType
+  ): GameStateBase {
     const computerInput = this.getRandomConsole();
     const result = this.getSelectionResult(userInput, computerInput);
     const newState = {
@@ -79,7 +85,7 @@ export class Game {
     return this.getStateFromResult(newState, result);
   }
 
-  static computerSelection(state: GameState): GameState {
+  static computerSelection(state: GameStateBase): GameStateBase {
     const userInput = this.getRandomConsole();
     const computerInput = this.getRandomConsole();
     const result = this.getSelectionResult(userInput, computerInput);
@@ -103,7 +109,7 @@ export class Game {
     return ResultEnum.Win;
   }
 
-  static getStateFromResult(state: GameState, result: ResultEnum) {
+  static getStateFromResult(state: GameStateBase, result: ResultEnum) {
     switch (result) {
       case ResultEnum.Win:
         return this.incrementWins(state);

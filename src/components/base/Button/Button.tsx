@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  ButtonMode,
-  ButtonProps,
-  ButtonSize,
-} from "../../../logic/button/model";
+import { ButtonMode, ButtonProps, ButtonSize } from "./model";
 
 import "./Button.scss";
 
@@ -25,4 +21,4 @@ const Button: React.FunctionComponent<ButtonProps> = ({
 
 Button.defaultProps = defaultProps;
 
-export default Button;
+export { Button };

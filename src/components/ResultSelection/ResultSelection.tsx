@@ -1,15 +1,15 @@
 import React from "react";
-import Picture from "../base/Picture/Picture";
+
+import { Picture } from "../base";
 import { ResultSelectionProps } from "../../logic/result/model";
 import { ConsoleType } from "../../logic/console/model";
-
 import Rock from "../../asserts/rock.png";
 import Paper from "../../asserts/paper.png";
 import Scissors from "../../asserts/scissors.png";
-
-import "./ResultSelection.scss";
 import { useMediaQuerySmall } from "../media-query";
 import { useMediaQueryRetina } from "../media-query/media-query";
+
+import "./ResultSelection.scss";
 
 const resultToImage = {
   [ConsoleType.Paper]: Paper,
@@ -33,12 +33,12 @@ const ResultSelection: React.FunctionComponent<ResultSelectionProps> = ({
   return (
     <div className="result-selection">
       <div className="result-selection__column">
-        <h1>You</h1>
+        <h3>You</h3>
         <br />
         <Picture src={resultToImage[userInput]} height={getHeight()} />
       </div>
       <div>
-        <h1>Computer</h1>
+        <h3>Computer</h3>
         <br />
         <Picture src={resultToImage[computerInput]} height={getHeight()} />
       </div>

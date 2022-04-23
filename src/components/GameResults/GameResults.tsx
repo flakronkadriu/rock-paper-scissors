@@ -20,10 +20,7 @@ const GameResults: React.FunctionComponent<GameStateExtended> = (props) => {
             Try again?
           </Button>
         </div>
-        <ResultSelection
-          userInput={props.userInput}
-          computerInput={props.computerInput}
-        />
+        <ResultSelection />
       </div>
     </div>
   );

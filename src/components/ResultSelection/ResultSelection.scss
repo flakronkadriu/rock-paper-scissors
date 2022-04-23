@@ -1,10 +1,26 @@
 .result-selection {
     display: flex;
-    margin-top: 30px;
-    flex-direction: row;
     justify-content: center;
+    margin-top: 30px;
 }
 
-.result-selection__column {
-    margin-right: 50px;
+.result-selection th {
+    padding-bottom: 20px;
+}
+
+.result-selection__title {
+    padding: 0 20px;
+    font-size: 2em;
+}
+
+.result--WIN {
+    color: #02cf17;
+}
+
+.result--DRAW {
+    color: #f58b00;
+}
+
+.result--LOSE {
+    color: #b01200;
 }

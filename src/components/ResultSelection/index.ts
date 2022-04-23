@@ -1,1 +1,1 @@
-export { ResultSelection } from "./ResultSelection";
+export { ResultSelectionEnhanced as ResultSelection } from "./ResultSelection";

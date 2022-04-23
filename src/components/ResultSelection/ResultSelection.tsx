@@ -10,6 +10,8 @@ import { useMediaQuerySmall } from "../media-query";
 import { useMediaQueryRetina } from "../media-query/media-query";
 
 import "./ResultSelection.scss";
+import { withGameStateContext } from "../../shared/utils/withContext";
+import { GameState } from "../../logic/game/model";
 
 const resultToImage = {
   [ConsoleType.Paper]: Paper,
@@ -17,9 +19,12 @@ const resultToImage = {
   [ConsoleType.Scissors]: Scissors,
 };
 
-const ResultSelection: React.FunctionComponent<ResultSelectionProps> = ({
+type Props = ResultSelectionProps & GameState;
+
+const ResultSelection: React.FunctionComponent<Props> = ({
   userInput,
   computerInput,
+  result,
 }) => {
   const isSmall = useMediaQuerySmall();
   const isRetina = useMediaQueryRetina();
@@ -32,18 +37,26 @@ const ResultSelection: React.FunctionComponent<ResultSelectionProps> = ({
 
   return (
     <div className="result-selection">
-      <div className="result-selection__column">
-        <h3>You</h3>
-        <br />
-        <Picture src={resultToImage[userInput]} height={getHeight()} />
-      </div>
-      <div>
-        <h3>Computer</h3>
-        <br />
-        <Picture src={resultToImage[computerInput]} height={getHeight()} />
-      </div>
+      <table>
+        <tr>
+          <th>You</th>
+          <th></th>
+          <th>Computer</th>
+        </tr>
+        <tr>
+          <td>
+            <Picture src={resultToImage[userInput]} height={getHeight()} />
+          </td>
+          <td className={`result-selection__title result--${result}`}>
+            {result}
+          </td>
+          <td>
+            <Picture src={resultToImage[computerInput]} height={getHeight()} />
+          </td>
+        </tr>
+      </table>
     </div>
   );
 };
 
-export { ResultSelection };
+export const ResultSelectionEnhanced = withGameStateContext(ResultSelection);

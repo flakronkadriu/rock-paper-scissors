@@ -22,8 +22,8 @@ export class Game {
     };
   }
 
-  static getRandomConsole(max = consoleTypes.length): ConsoleType {
-    return consoleTypes[Math.floor(Math.random() * max)];
+  static getRandomConsole(): ConsoleType {
+    return consoleTypes[Math.floor(Math.random() * consoleTypes.length)];
   }
 
   static incrementWins(state: GameState): GameState {
@@ -65,35 +65,6 @@ export class Game {
     });
   }
 
-  static userSelection(state: GameState, userInput: ConsoleType): GameState {
-    const computerInput = this.getRandomConsole();
-    const result = this.getSelectionResult(userInput, computerInput);
-    const newState = {
-      ...state,
-      isPlaying: false,
-      result,
-      userInput,
-      computerInput,
-    };
-
-    return this.getStateFromResult(newState, result);
-  }
-
-  static computerSelection(state: GameState): GameState {
-    const userInput = this.getRandomConsole();
-    const computerInput = this.getRandomConsole();
-    const result = this.getSelectionResult(userInput, computerInput);
-    const newState = {
-      ...state,
-      isPlaying: false,
-      result,
-      userInput,
-      computerInput,
-    };
-
-    return this.getStateFromResult(newState, result);
-  }
-
   static getSelectionResult(
     userInput: ConsoleType,
     computerInput: ConsoleType
@@ -106,11 +77,37 @@ export class Game {
   static getStateFromResult(state: GameState, result: ResultEnum) {
     switch (result) {
       case ResultEnum.Win:
-        return this.incrementWins(state);
+        return {
+          ...this.incrementWins(state),
+          isPlaying: false,
+          result,
+        };
       case ResultEnum.Lose:
-        return this.incrementLose(state);
+        return {
+          ...this.incrementLose(state),
+          isPlaying: false,
+          result,
+        };
       default:
-        return state;
+        return { ...state, isPlaying: false, result };
     }
+  }
+
+  static userSelection(state: GameState, userInput: ConsoleType): GameState {
+    const computerInput = this.getRandomConsole();
+    const result = this.getSelectionResult(userInput, computerInput);
+    const newState = {
+      ...state,
+      userInput,
+      computerInput,
+    };
+
+    return this.getStateFromResult(newState, result);
+  }
+
+  static computerSelection(state: GameState): GameState {
+    const userInput = this.getRandomConsole();
+
+    return this.userSelection(state, userInput);
   }
 }

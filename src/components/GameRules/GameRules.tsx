@@ -1,7 +1,7 @@
 import React from "react";
 
-import GameRulesImg from "../../asserts/game-rules.png";
-import CloseIcon from "../../asserts/icon-close.svg";
+import GameRulesImg from "../../assets/game-rules.png";
+import CloseIcon from "../../assets/icon-close.svg";
 import { Button, ButtonMode } from "../base/Button";
 import { Picture } from "../base/Picture";
 import { useMediaQuerySmall } from "../media-query";
@@ -23,7 +23,10 @@ const GameRules: React.FunctionComponent<Props> = ({ isOpen, closeModal }) => {
   };
 
   return (
-    <div className={`overlay ${isOpen ? "visible" : ""}`}>
+    <div
+      className={`overlay ${isOpen ? "visible" : ""}`}
+      data-testid="game-rules-modal"
+    >
       <div className="modal">
         <h2>Rules</h2>
         <div className="close">

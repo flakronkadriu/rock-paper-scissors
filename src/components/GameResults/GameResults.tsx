@@ -10,7 +10,7 @@ import "./GameResults.scss";
 
 const GameResults: React.FunctionComponent<GameStateExtended> = (props) => {
   return (
-    <div className="game_results">
+    <div className="game_results" data-testid="game-results">
       <div className="game_result__content">
         <div className="content__btn">
           <Button

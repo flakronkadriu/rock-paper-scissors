@@ -11,7 +11,7 @@ import "./GameMode.scss";
 type Props = GameModeProps & GameStateExtended;
 
 const GameMode: React.FunctionComponent<Props> = (props) => (
-  <div className="game-mode">
+  <div className="game-mode" data-testid="game-mode">
     <div className="game-mode__wrapper">
       <div className="game-mode__content">
         <div className="content__headline">
@@ -20,6 +20,7 @@ const GameMode: React.FunctionComponent<Props> = (props) => (
         <div className="content__btn_player">
           <Button
             size={ButtonSize.Medium}
+            data-testid="game-mode-play-btn"
             onClick={() =>
               props.setGameState(Game.setGameStatus(props, GameStatus.Started))
             }
@@ -27,7 +28,11 @@ const GameMode: React.FunctionComponent<Props> = (props) => (
             Lets play!
           </Button>
         </div>
-        <Button mode={ButtonMode.Secondary} onClick={props.openModal}>
+        <Button
+          mode={ButtonMode.Secondary}
+          onClick={props.openModal}
+          data-testid="game-mode-rules-btn"
+        >
           Game rules
         </Button>
       </div>

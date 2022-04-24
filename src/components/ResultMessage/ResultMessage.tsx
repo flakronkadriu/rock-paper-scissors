@@ -2,9 +2,9 @@ import React from "react";
 
 import { ResultEnum } from "../../logic/result/model";
 import { Picture } from "../base/Picture";
-import Confetti from "../../asserts/confetti.png";
-import Sad from "../../asserts/sad.png";
-import Confused from "../../asserts/confused.png";
+import Confetti from "../../assets/confetti.png";
+import Sad from "../../assets/sad.png";
+import Confused from "../../assets/confused.png";
 import { Result } from "../../logic/result/Result";
 import { useMediaQuerySmall } from "../media-query";
 import { ResultMessageProps } from "./model";

@@ -21,7 +21,7 @@ const Main: React.FC = () => {
   const values = { ...gameState, setGameState } as GameStateExtended;
 
   return (
-    <div className="main">
+    <div className="main" data-testid="main">
       <GameStateContext.Provider value={values}>
         {values.gameStatus === GameStatus.Init && (
           <GameMode openModal={openModalHandler} />

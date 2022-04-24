@@ -24,6 +24,7 @@ const Console: React.FunctionComponent<Props> = ({ type, image, ...props }) => {
   return (
     <div
       className="console"
+      data-testid="console"
       onClick={() => props.setGameState(Game.userSelection(props, type))}
     >
       <Picture src={image} height={getHeight()} />

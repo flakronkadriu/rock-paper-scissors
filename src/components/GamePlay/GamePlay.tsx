@@ -12,7 +12,7 @@ const GamePlay: React.FunctionComponent<GameState> = ({
   isPlaying,
   gameStatus,
 }) => (
-  <div className="game__wrapper">
+  <div className="game__wrapper" data-testid="game-play">
     <Score />
     {gameStatus === GameStatus.Started && (
       <div>

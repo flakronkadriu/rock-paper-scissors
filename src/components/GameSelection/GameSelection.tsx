@@ -1,8 +1,8 @@
 import React from "react";
 
-import Rock from "../../asserts/rock.png";
-import Paper from "../../asserts/paper.png";
-import Scissors from "../../asserts/scissors.png";
+import Rock from "../../assets/rock.png";
+import Paper from "../../assets/paper.png";
+import Scissors from "../../assets/scissors.png";
 import { ConsoleType } from "../../logic/console";
 import { Console } from "../Console";
 import { Button, ButtonMode, ButtonSize } from "../base/Button";
@@ -13,7 +13,7 @@ import { GameStateExtended } from "../GamePlay/context";
 import "./GameSelection.scss";
 
 const GameSelection: React.FunctionComponent<GameStateExtended> = (props) => (
-  <div className="game-selection">
+  <div className="game-selection" data-testid="game-selection">
     <div className="game-selection__container">
       <div className="container__consoles">
         <div className="console__left">

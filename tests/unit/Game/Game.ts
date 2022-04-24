@@ -1,7 +1,7 @@
 import { ConsoleType, consoleTypes } from "../../../src/logic/console";
 import { Game } from "../../../src/logic/game/Game";
 import { GameStatus } from "../../../src/logic/game/model";
-import { ResultEnum } from "../../../src/logic/result/model";
+import { GameResult } from "../../../src/logic/result/model";
 
 afterAll(() => {
   jest.restoreAllMocks();
@@ -18,7 +18,7 @@ describe("Game", () => {
           lose: 0,
           isPlaying: false,
           gameStatus: GameStatus.Init,
-          result: ResultEnum.Draw,
+          result: GameResult.Draw,
           userInput: ConsoleType.Paper,
           computerInput: ConsoleType.Rock,
         })
@@ -146,7 +146,7 @@ describe("Game", () => {
           userInput,
           computerInput,
           isPlaying: false,
-          result: ResultEnum.Win,
+          result: GameResult.Win,
           wins: state.wins + 1,
         })
       );
@@ -168,7 +168,7 @@ describe("Game", () => {
           userInput,
           computerInput,
           isPlaying: false,
-          result: ResultEnum.Lose,
+          result: GameResult.Lose,
           lose: state.lose + 1,
         })
       );
@@ -190,7 +190,7 @@ describe("Game", () => {
           userInput,
           computerInput,
           isPlaying: false,
-          result: ResultEnum.Draw,
+          result: GameResult.Draw,
         })
       );
     });
@@ -210,7 +210,7 @@ describe("Game", () => {
           userInput: ConsoleType.Paper,
           computerInput: ConsoleType.Paper,
           isPlaying: false,
-          result: ResultEnum.Draw,
+          result: GameResult.Draw,
         })
       );
     });
@@ -222,7 +222,7 @@ describe("Game", () => {
       const computerInput = ConsoleType.Paper;
 
       expect(Game.getSelectionResult(userInput, computerInput)).toStrictEqual(
-        ResultEnum.Draw
+        GameResult.Draw
       );
     });
     describe("user loses", () => {
@@ -231,7 +231,7 @@ describe("Game", () => {
         const computerInput = ConsoleType.Paper;
 
         expect(Game.getSelectionResult(userInput, computerInput)).toStrictEqual(
-          ResultEnum.Lose
+          GameResult.Lose
         );
       });
 
@@ -240,7 +240,7 @@ describe("Game", () => {
         const computerInput = ConsoleType.Rock;
 
         expect(Game.getSelectionResult(userInput, computerInput)).toStrictEqual(
-          ResultEnum.Lose
+          GameResult.Lose
         );
       });
 
@@ -249,7 +249,7 @@ describe("Game", () => {
         const computerInput = ConsoleType.Scissors;
 
         expect(Game.getSelectionResult(userInput, computerInput)).toStrictEqual(
-          ResultEnum.Lose
+          GameResult.Lose
         );
       });
     });
@@ -259,34 +259,34 @@ describe("Game", () => {
       const computerInput = ConsoleType.Rock;
 
       expect(Game.getSelectionResult(userInput, computerInput)).toStrictEqual(
-        ResultEnum.Win
+        GameResult.Win
       );
     });
   });
 
   describe("getStateFromResult", () => {
     it("returns incremented wins if user wins", () => {
-      const result = Game.getStateFromResult(state, ResultEnum.Win);
+      const result = Game.getStateFromResult(state, GameResult.Win);
 
       expect(result).toStrictEqual(
         expect.objectContaining({
           ...state,
           isPlaying: false,
           wins: state.wins + 1,
-          result: ResultEnum.Win,
+          result: GameResult.Win,
         })
       );
     });
 
     it("returns incremented lose if user loses", () => {
-      const result = Game.getStateFromResult(state, ResultEnum.Lose);
+      const result = Game.getStateFromResult(state, GameResult.Lose);
 
       expect(result).toStrictEqual(
         expect.objectContaining({
           ...state,
           isPlaying: false,
           lose: state.wins + 1,
-          result: ResultEnum.Lose,
+          result: GameResult.Lose,
         })
       );
     });

@@ -1,9 +1,11 @@
 import React from "react";
-import { fireEvent, screen } from "@testing-library/react";
+import { cleanup, fireEvent, screen } from "@testing-library/react";
 import { GamePlay, GameStateExtended } from "../../../src/components/GamePlay";
 import { Game } from "../../../src/logic/game/Game";
 import { GameState, GameStatus } from "../../../src/logic/game/model";
 import { renderWithGameContext } from "../../fixture/renderWithGameContext";
+
+afterEach(cleanup);
 
 describe("GamePlay component", () => {
   it("should render game play on started state", () => {
@@ -47,13 +49,15 @@ describe("GamePlay component", () => {
 
     providerValue = { ...gameResult, setGameState } as GameStateExtended;
 
+    cleanup();
+
     renderWithGameContext(<GamePlay />, providerValue);
 
     const resultSelectionContainer = screen.getByTestId("result-selection");
     const userInput = screen.getByTestId("result-selection-user");
     const computerInput = screen.getByTestId("result-selection-computer");
-    const wins = screen.getAllByTestId("points-count-wins")[1];
-    const lose = screen.getAllByTestId("points-count-lose")[1];
+    const wins = screen.getByTestId("points-count-wins");
+    const lose = screen.getByTestId("points-count-lose");
 
     expect(screen.getByTestId("game-results")).not.toBeNull();
     expect(resultSelectionContainer).not.toBeNull();

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ResultEnum } from "../../logic/result/model";
+import { GameResult } from "../../logic/result/model";
 import { Picture } from "../base/Picture";
 import Confetti from "../../assets/confetti.png";
 import Sad from "../../assets/sad.png";
@@ -12,9 +12,9 @@ import { ResultMessageProps } from "./model";
 import "./ResultMessage.scss";
 
 const resultToImage = {
-  [ResultEnum.Draw]: Confused,
-  [ResultEnum.Win]: Confetti,
-  [ResultEnum.Lose]: Sad,
+  [GameResult.Draw]: Confused,
+  [GameResult.Win]: Confetti,
+  [GameResult.Lose]: Sad,
 };
 
 const ResultMessage: React.FunctionComponent<ResultMessageProps> = ({

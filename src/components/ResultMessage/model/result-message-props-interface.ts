@@ -1,5 +1,5 @@
-import { ResultEnum } from "../../../logic/result/model/result-enum";
+import { GameResult } from "../../../logic/result/model/game-result-enum";
 
 export interface ResultMessageProps {
-  result: ResultEnum;
+  result: GameResult;
 }

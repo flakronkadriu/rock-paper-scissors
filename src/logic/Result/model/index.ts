@@ -1,1 +1,1 @@
-export { ResultEnum } from "./result-enum";
+export { GameResult } from "./game-result-enum";

@@ -1,5 +1,5 @@
 import { ConsoleType, consoleTypes } from "../console";
-import { ResultEnum } from "../result/model";
+import { GameResult } from "../result/model";
 import { userLoses } from "../user";
 import { GameStatus, GameState } from "./model";
 
@@ -10,7 +10,7 @@ export class Game {
       lose: 0,
       isPlaying: false,
       gameStatus: GameStatus.Init,
-      result: ResultEnum.Draw,
+      result: GameResult.Draw,
       userInput: ConsoleType.Paper,
       computerInput: ConsoleType.Rock,
     };
@@ -68,21 +68,21 @@ export class Game {
   static getSelectionResult(
     userInput: ConsoleType,
     computerInput: ConsoleType
-  ): ResultEnum {
-    if (userInput === computerInput) return ResultEnum.Draw;
-    if (userLoses[userInput] === computerInput) return ResultEnum.Lose;
-    return ResultEnum.Win;
+  ): GameResult {
+    if (userInput === computerInput) return GameResult.Draw;
+    if (userLoses[userInput] === computerInput) return GameResult.Lose;
+    return GameResult.Win;
   }
 
-  static getStateFromResult(state: GameState, result: ResultEnum) {
+  static getStateFromResult(state: GameState, result: GameResult) {
     switch (result) {
-      case ResultEnum.Win:
+      case GameResult.Win:
         return {
           ...this.incrementWins(state),
           isPlaying: false,
           result,
         };
-      case ResultEnum.Lose:
+      case GameResult.Lose:
         return {
           ...this.incrementLose(state),
           isPlaying: false,

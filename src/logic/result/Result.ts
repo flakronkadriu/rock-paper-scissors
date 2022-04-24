@@ -1,13 +1,13 @@
-import { ResultEnum } from "./model";
+import { GameResult } from "./model";
 
 export class Result {
-  static getResultMessage(value: ResultEnum) {
+  static getResultMessage(value: GameResult) {
     switch (value) {
-      case ResultEnum.Draw:
+      case GameResult.Draw:
         return "DRAW!";
-      case ResultEnum.Lose:
+      case GameResult.Lose:
         return "You LOST!";
-      case ResultEnum.Win:
+      case GameResult.Win:
         return "You WON!";
     }
   }
